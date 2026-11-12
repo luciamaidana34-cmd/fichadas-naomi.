@@ -12,6 +12,9 @@ const {
 } = process.env;
 
 const TABLE_URL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE)}`;
+console.log("Base Airtable:", AIRTABLE_BASE_ID);
+console.log("Tabla Airtable:", AIRTABLE_TABLE);
+console.log("URL Airtable:", TABLE_URL);
 const headers = () => ({
   Authorization: `Bearer ${AIRTABLE_TOKEN}`,
   "Content-Type": "application/json"
