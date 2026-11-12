@@ -1,40 +1,87 @@
+
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fichadas · Naomi</title><link rel="stylesheet" href="/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Naomi</title>
+  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <main class="shell">
-    <header><div class="eyebrow">REGISTRO DE JORNADA</div><h1>Hola, Naomi</h1><p id="today" class="muted"></p></header>
+    <header>
+      <div class="eyebrow">MI ESPACIO</div>
+      <h1>¡Hola, Naomi! ✨</h1>
+      <p id="today" class="muted"></p>
+    </header>
+
     <section id="employee">
       <div class="clock-card">
-        <div class="clock-label">HORA ACTUAL</div><div id="clock" class="clock">--:--:--</div>
+        <div class="clock-label">HORA ACTUAL</div>
+        <div id="clock" class="clock">--:--:--</div>
         <p id="shiftState" class="muted">Consultando estado…</p>
-        <div class="actions"><button id="inBtn" class="primary">ENTRAR</button><button id="outBtn" class="secondary">SALIR</button></div>
+        <div class="actions">
+          <button id="inBtn" class="primary">ENTRAR</button>
+          <button id="outBtn" class="secondary">SALIR</button>
+        </div>
         <p id="feedback" role="status" class="feedback"></p>
       </div>
+
       <section class="panel">
-        <div class="section-head"><div><div class="eyebrow">TU HISTORIAL</div><h2>Calendario mensual</h2></div>
-          <div class="month-nav"><button id="prevMonth" aria-label="Mes anterior">‹</button><strong id="monthLabel"></strong><button id="nextMonth" aria-label="Mes siguiente">›</button></div>
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">MIS DÍAS</div>
+            <h2>Mi calendario</h2>
+          </div>
+          <div class="month-nav">
+            <button id="prevMonth" aria-label="Mes anterior">‹</button>
+            <strong id="monthLabel"></strong>
+            <button id="nextMonth" aria-label="Mes siguiente">›</button>
+          </div>
         </div>
-        <div class="weekdays"><span>Lu</span><span>Ma</span><span>Mi</span><span>Ju</span><span>Vi</span><span>Sá</span><span>Do</span></div>
+        <div class="weekdays">
+          <span>Lu</span><span>Ma</span><span>Mi</span>
+          <span>Ju</span><span>Vi</span><span>Sá</span><span>Do</span>
+        </div>
         <div id="calendar" class="calendar"></div>
-        <div class="legend"><span><i></i> Día con fichadas</span><span><i class="selected-dot"></i> Día seleccionado</span></div>
+        <div class="legend">
+          <span><i></i> Día con actividad</span>
+          <span><i class="selected-dot"></i> Día seleccionado</span>
+        </div>
       </section>
+
       <section class="panel">
-        <div class="eyebrow">DETALLE DEL DÍA</div><h2 id="selectedDate">Seleccioná una fecha</h2>
-        <div id="dayDetail" class="detail muted">Todavía no hay información para mostrar.</div>
+        <div class="eyebrow">CONSULTA</div>
+        <h2 id="selectedDate">Seleccioná una fecha</h2>
+        <div id="dayDetail" class="detail muted">
+          Todavía no hay información para mostrar.
+        </div>
       </section>
+
       <section class="panel totals">
-        <div class="eyebrow">RESUMEN DEL MES</div><h2 id="summaryMonth"></h2>
-        <div class="total-grid"><div><span>Nocturnas</span><strong id="monthNight">0 h</strong></div><div><span>Diurnas</span><strong id="monthDay">0 h</strong></div><div><span>Total</span><strong id="monthTotal">0 h</strong></div></div>
+        <div class="eyebrow">MIS HORAS</div>
+        <h2 id="summaryMonth"></h2>
+        <div class="total-grid">
+          <div><span>Nocturnas</span><strong id="monthNight">0 h</strong></div>
+          <div><span>Diurnas</span><strong id="monthDay">0 h</strong></div>
+          <div><span>Total</span><strong id="monthTotal">0 h</strong></div>
+        </div>
       </section>
     </section>
+
     <section id="admin" hidden>
-      <div class="panel"><div class="eyebrow">RRHH</div><h2>Administración de fichadas</h2><p class="muted">Revisá el historial y corregí registros con motivo. Las modificaciones quedan identificadas como correcciones en Airtable.</p><div id="adminList"></div></div>
+      <div class="panel">
+        <div class="eyebrow">RRHH</div>
+        <h2>Administración de fichadas</h2>
+        <p class="muted">Revisá el historial y corregí registros con motivo. Las modificaciones quedan identificadas como correcciones en Airtable.</p>
+        <div id="adminList"></div>
+      </div>
     </section>
-    <footer>Si olvidaste fichar o necesitás corregir un registro, comunicate con RRHH.</footer>
+
+    <footer>
+      ¿Necesitás ayuda? Podés comunicarte con el equipo de RRHH.
+    </footer>
   </main>
   <script src="/app.js"></script>
-</body></html>
+</body>
+</html>
