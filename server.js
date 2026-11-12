@@ -29,7 +29,10 @@ function requireKey(kind) {
 async function airtable(pathname = "", options = {}) {
   const response = await fetch(`${TABLE_URL}${pathname}`, { ...options, headers: { ...headers(), ...(options.headers || {}) } });
   const data = await response.json();
-  if (!response.ok) throw new Error(data.error?.message || `Error de Airtable (${response.status})`);
+ if (!response.ok) {
+  console.error("Error detallado de Airtable:", response.status, JSON.stringify(data));
+  throw new Error(`Airtable ${response.status}: ${data.error?.message || data.error?.type || JSON.stringify(data.error)}`);
+}
   return data;
 }
 
